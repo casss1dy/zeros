@@ -1,6 +1,5 @@
 module.exports = function zeros(expression) {
-  let i,
-    step = 1,
+  let step = 1,
     fiveCount = 0,
     twoCount = 0;
 
@@ -11,8 +10,8 @@ module.exports = function zeros(expression) {
     item = +item.replace(/!+/, '');
 
     while (item > 1) {
-      fiveCount += numMultiply(item, 5);
-      twoCount += numMultiply(item, 2);
+      fiveCount += countMultiply(item, 5);
+      twoCount += countMultiply(item, 2);
       item -= step;
     }
   });
@@ -21,7 +20,7 @@ module.exports = function zeros(expression) {
   else return fiveCount;
 }
 
-function numMultiply(num, multiply) {
+function countMultiply(num, multiply) {
   let count = 0;
   let res = num;
   while (res >= multiply) {
